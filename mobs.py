@@ -45,7 +45,7 @@ moby = [
 {
             **items.krysztaly_duszy[0],
             'Szansa': 10
-            },
+            }
         ]
     },
 {
@@ -2058,7 +2058,7 @@ moby = [
             'Szansa': 0.1
             }
         ]
-    },
+    }
         ]
 
 mapy = [
