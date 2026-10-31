@@ -73,6 +73,8 @@ def zaloz_przedmiot(gracz, numer):
             slot_eq = przedmiot['Rodzaj']
             if przedmiot.get('Klasa') and gracz['Klasa'] != przedmiot['Klasa']:
                 return False, f'\nTylko {przedmiot['Klasa']} może założyć ten przedmiot!'
+            if przedmiot['Rodzaj'] not in ['Broń', 'Tarcza', 'Hełm', 'Zbroja', 'Buty', 'Pierścień', 'Naszyjnik']:
+                return False, 'Nie możesz założyć tego przedmiotu!'
             if gracz['Poziom'] < przedmiot['Poziom']:
                 return False, f'\nWymagany poziom do założenia "{przedmiot['Nazwa']}": {przedmiot['Poziom']}'
             if slot_eq == 'Broń':
