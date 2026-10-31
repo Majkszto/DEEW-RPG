@@ -76,3 +76,27 @@ The main game systems are implemented, but I plan to continue improving the game
 My name is Dawid. I am learning Python and working towards my first job in software development.
 
 DEEW RPG is my first larger programming project. I created it to practice working with functions, dictionaries, lists, loops, modules and game logic.
+
+## Gameplay Screenshots
+
+### Main Menu
+![Main Menu](screenshots/01-main-menu.png)
+
+### Character and Equipment
+![Character](screenshots/02-character.png)
+
+### Combat
+![Combat Victory](screenshots/04-combat-victory.png)
+![Combat Defeat](screenshots/03-combat-defeat.png)
+
+### Item Quality and Upgrades
+![Item Quality](screenshots/05-item-quality.png)
+![Equipment Upgrade](screenshots/06-item-upgrade.png)
+![Quality Comparison](screenshots/10-item-quality-comparison.png)
+
+### Skills and Locations
+![Skills](screenshots/07-skills.png)
+![Locations](screenshots/08-locations.png)
+
+### Shop
+![Shop](screenshots/09-shop.png)
