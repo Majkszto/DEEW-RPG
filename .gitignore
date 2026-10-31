@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+venv/
+
+# PyCharm
+.idea/
+
+# Game saves
+zapis_gry.json
+
+# Temporary files
+*.log
+.DS_Store
+Thumbs.db
