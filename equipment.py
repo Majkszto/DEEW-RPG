@@ -156,6 +156,20 @@ def pokaz_zalozone_przedmioty(gracz):
             print(f'{indeks}. {slot}: Brak')
     print('━' * 75)
 
+def pokaz_zalozone_przedmioty_zdejmij(gracz):
+    ui.wyswietl_tytul('ZAŁOŻONE')
+    for indeks, (slot, item) in enumerate(gracz['Założone'].items(), start=1):
+        if item is not None:
+            if item.get('Jakość') is not None:
+                unikalnosc, bonus = items.sprawdz_jakosc(item['Jakość'])
+                print(f'{indeks}. {slot}: [{unikalnosc}] {item['Nazwa']} +{item['Ulepszono']} (Poziom: {item['Poziom']})')
+            else:
+                print(f'{indeks}. {slot}: {item['Nazwa']} (Poziom: {item['Poziom']})')
+        else:
+            print(f'{indeks}. {slot}: Brak')
+    print('\n0. Powrót')
+    print('━' * 75)
+
 def zdejmij_przedmiot(gracz, numer):
     rodzaje_pancerza = ['Hełm', 'Zbroja', 'Buty']
     rodzaje_bizuterii = ['Pierścień', 'Naszyjnik']
@@ -214,8 +228,11 @@ def menu_ekwipunku(gracz):
                 print('\nBrak przedmiotów w ekwipunku!')
                 continue
             wyswietl_ekwipunek(gracz)
+            print('\n0) Powrót')
             print('\nWybierz numer przedmiotu: ')
-            numer = ui.pobierz_wybor(1, len(gracz['Ekwipunek']))
+            numer = ui.pobierz_wybor(0, len(gracz['Ekwipunek']))
+            if numer == 0:
+                continue
             status, wynik = zaloz_przedmiot(gracz, numer)
             if status:
                 if wynik.get('Ulepszono') is not None:
@@ -231,8 +248,10 @@ def menu_ekwipunku(gracz):
                     znaleziono = True
                     break
             if znaleziono:
-                pokaz_zalozone_przedmioty(gracz)
-                numer = ui.pobierz_wybor(1, 7)
+                pokaz_zalozone_przedmioty_zdejmij(gracz)
+                numer = ui.pobierz_wybor(0, 7)
+                if numer == 0:
+                    continue
                 status, wynik = zdejmij_przedmiot(gracz, numer)
                 if status:
                     if wynik.get('Ulepszono') is not None:
