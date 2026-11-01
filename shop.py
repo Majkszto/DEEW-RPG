@@ -873,6 +873,7 @@ def menu_sklepu(gracz):
                             continue
                         else:
                             print(f'{klucz}: {wartosc}')
+                print('\n0) - Powrót')
                 print('\nPodaj numer przedmiotu do sprzedaży: ')
                 numer_przedmiotu = ui.pobierz_wybor(0, len(eq))
                 if numer_przedmiotu < 0:
