@@ -1,8 +1,38 @@
 # DEEW RPG
 
-A text-based RPG game written in Python.
+DEEW RPG is a text-based, turn-based RPG developed in Python.
 
-This is my personal project, created to learn Python and practice programming. The game runs in the terminal and is still in development.
+The game features character progression, combat, equipment upgrades, item quality, loot, shops, skills and a JSON save system.
+
+This is my first large personal programming project, built to practice Python, modular code organization and game logic. The project is still in development.
+
+
+## Gameplay Screenshots
+
+### Character and Equipment
+![Character and Equipment](screenshots/02-character.png)
+
+### Combat
+![Combat Victory](screenshots/04-combat-victory.png)
+![Combat Defeat](screenshots/03-combat-defeat.png)
+
+### Item Quality and Upgrades
+<img src="screenshots/05-item-quality.png" width="48%" alt="Item quality reroll">
+<img src="screenshots/06-item-upgrade.png" width="48%" alt="Equipment upgrade">
+
+### Item Quality Comparison
+![Item Quality Comparison](screenshots/10-item-quality-comparison.png)
+
+### Skills and Locations
+<img src="screenshots/07-skills.png" width="48%" alt="Skills">
+<img src="screenshots/08-locations.png" width="48%" alt="Locations">
+
+### Shop
+![Shop](screenshots/09-shop.png)
+
+### Main Menu
+![Main Menu](screenshots/01-main-menu.png)
+
 
 ## Features
 
@@ -76,27 +106,3 @@ The main game systems are implemented, but I plan to continue improving the game
 My name is Dawid. I am learning Python and working towards my first job in software development.
 
 DEEW RPG is my first larger programming project. I created it to practice working with functions, dictionaries, lists, loops, modules and game logic.
-
-## Gameplay Screenshots
-
-### Main Menu
-![Main Menu](screenshots/01-main-menu.png)
-
-### Character and Equipment
-![Character](screenshots/02-character.png)
-
-### Combat
-![Combat Victory](screenshots/04-combat-victory.png)
-![Combat Defeat](screenshots/03-combat-defeat.png)
-
-### Item Quality and Upgrades
-![Item Quality](screenshots/05-item-quality.png)
-![Equipment Upgrade](screenshots/06-item-upgrade.png)
-![Quality Comparison](screenshots/10-item-quality-comparison.png)
-
-### Skills and Locations
-![Skills](screenshots/07-skills.png)
-![Locations](screenshots/08-locations.png)
-
-### Shop
-![Shop](screenshots/09-shop.png)
