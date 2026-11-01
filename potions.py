@@ -19,6 +19,7 @@ def pokaz_eliksiry(gracz):
                     print(f'\n{indeks}) "{wartosc}"')
                 else:
                     print(f'{klucz}: {wartosc}')
+        print('\n0) Powrót')
     else:
         print('\nBrak eliksirów!')
 

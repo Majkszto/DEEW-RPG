@@ -153,9 +153,18 @@ def trener_naucz_umiejetnosci(gracz, numer_umiejetnosci):
         return f'\nTa umiejętność jest przeznaczona dla klasy: {wybrana_umiejetnosc['Klasa']}!'
     return f'\nZbyt niski poziom gracza!\nWymagany: {wybrana_umiejetnosc['Poziom']} poziom!'
 
-def pokaz_wybrane_umiejetnosci(gracz):
+def pokaz_wybrane_umiejetnosci_postac(gracz):
     print('UMIEJĘTNOŚCI'.center(75))
     print('━' * 75)
+    for slot, skill in gracz['Umiejętności'].items():
+        if skill is not None:
+            print(f'{slot}: {skill['Nazwa']} (Poziom: {skill['Poziom']})')
+        else:
+            print(f'{slot}: Brak')
+    print('━' * 75)
+
+def pokaz_wybrane_umiejetnosci(gracz):
+    ui.wyswietl_tytul('UMIEJĘTNOŚCI')
     for slot, skill in gracz['Umiejętności'].items():
         if skill is not None:
             print(f'{slot}: {skill['Nazwa']} (Poziom: {skill['Poziom']})')
@@ -200,10 +209,13 @@ def pokaz_nauczone_umiejetnosci(gracz):
 def ustaw_umiejetnosc_w_slocie(gracz):
     if gracz['Wyuczono']:
         pokaz_wybrane_umiejetnosci(gracz)
+        print('\n0) Powrót')
         print('\nWybierz numer slotu: ')
-        wybierz_slot = ui.pobierz_wybor(1, 5)
-        if wybierz_slot < 1 or wybierz_slot > 5:
+        wybierz_slot = ui.pobierz_wybor(0, 5)
+        if wybierz_slot < 0 or wybierz_slot > 5:
             print('\nMusisz wybrać slot od 1 do 5!')
+            return
+        if wybierz_slot == 0:
             return
         pokaz_nauczone_umiejetnosci(gracz)
         print('\nWybierz numer umiejętności: ')
@@ -236,10 +248,13 @@ def usun_umiejetnosc_ze_slotu(gracz):
         print('\nBrak przypisanych umiejętności!')
         return
     pokaz_wybrane_umiejetnosci(gracz)
+    print('\n0) Powrót')
     print('\nWybierz numer slotu umiejętności do usunięcia: ')
-    wybierz_slot = ui.pobierz_wybor(1, 5)
-    if wybierz_slot < 1 or wybierz_slot > 5:
+    wybierz_slot = ui.pobierz_wybor(0, 5)
+    if wybierz_slot < 0 or wybierz_slot > 5:
         print('\nWybrano niepoprawny numer slotu!')
+        return
+    if wybierz_slot == 0:
         return
     if gracz['Umiejętności'][f'Slot {wybierz_slot}'] is None:
         print(f'\nSlot {wybierz_slot} jest pusty!')
@@ -266,8 +281,11 @@ def menu_trener(gracz):
         elif opcja2 == 6:
             dostepne = trener_pokaz_umiejetnosci(gracz)
             if dostepne:
+                print('\n0) Powrót')
                 print('\nPodaj numer umiejętności, której chcesz się nauczyć: ')
-                numer_umiejetnosci1 = ui.pobierz_wybor(1, len(dostepne))
+                numer_umiejetnosci1 = ui.pobierz_wybor(0, len(dostepne))
+                if numer_umiejetnosci1 == 0:
+                    continue
                 komunikat = trener_naucz_umiejetnosci(gracz, numer_umiejetnosci1)
                 print(komunikat)
         elif opcja2 == 7:

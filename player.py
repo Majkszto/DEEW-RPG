@@ -77,7 +77,7 @@ def wyswietl_postac(gracz):
         elif klucz == 'Statystyki':
             pokaz_statystyki(gracz)
         elif klucz == 'Umiejętności':
-            skills.pokaz_wybrane_umiejetnosci(gracz)
+            skills.pokaz_wybrane_umiejetnosci_postac(gracz)
 
 def pokaz_statystyki(gracz):
     print('STATYSTYKI'.center(75))

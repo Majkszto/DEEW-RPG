@@ -269,7 +269,10 @@ def menu_ekwipunku(gracz):
                 print('\nBrak posiadanych eliksirów!')
                 continue
             potions.pokaz_eliksiry(gracz)
-            numer_przedmiotu = ui.pobierz_wybor(1, len(eq))
+            print('\nWybierz eliksir: ')
+            numer_przedmiotu = ui.pobierz_wybor(0, len(eq))
+            if numer_przedmiotu == 0:
+                continue
             komunikat = potions.wypij_eliksir(gracz, numer_przedmiotu)
             print(komunikat)
         elif opcja1 == 6:
