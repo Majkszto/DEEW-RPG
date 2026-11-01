@@ -1648,6 +1648,7 @@ def pokaz_eq_do_zmiany_jakosci(gracz):
     for indeks, przedmiot in enumerate(eq, start=1):
         unikalnosc, bonus = sprawdz_jakosc(przedmiot['Jakość'])
         print(f'{indeks}) "[{unikalnosc}] {przedmiot['Nazwa']} +{przedmiot['Ulepszono']}"')
+    print('\n0) - Powrót')
     return eq
 
 def wybierz_eq_do_zmiany_jakosci(gracz):
@@ -1655,9 +1656,11 @@ def wybierz_eq_do_zmiany_jakosci(gracz):
     if not eq:
         return
     print('\nPodaj numer przedmiotu: ')
-    numer_przedmiotu = ui.pobierz_wybor(1, len(eq))
-    if numer_przedmiotu < 1 or numer_przedmiotu > len(eq):
+    numer_przedmiotu = ui.pobierz_wybor(0, len(eq))
+    if numer_przedmiotu < 0 or numer_przedmiotu > len(eq):
         print('\nWybierz poprawny numer przedmiotu!')
+        return
+    if numer_przedmiotu == 0:
         return
     wybrany_przedmiot = eq[numer_przedmiotu - 1]
     status, przedmiot = zmiana_jakosci(gracz, wybrany_przedmiot)
@@ -1713,6 +1716,7 @@ def pokaz_eq_do_ulepszenia(gracz):
     for indeks, przedmiot in enumerate(eq, start=1):
         unikalnosc, bonus = sprawdz_jakosc(przedmiot['Jakość'])
         print(f'{indeks}) "[{unikalnosc}] {przedmiot['Nazwa']} +{przedmiot['Ulepszono']}"')
+    print('\n0) - Powrót')
     return eq
 
 def wybierz_eq_do_ulepszenia(gracz):
@@ -1720,9 +1724,11 @@ def wybierz_eq_do_ulepszenia(gracz):
     if not eq:
         return
     print('\nPodaj numer przedmiotu: ')
-    numer_przedmiotu = ui.pobierz_wybor(1, len(eq))
-    if numer_przedmiotu < 1 or numer_przedmiotu > len(eq):
+    numer_przedmiotu = ui.pobierz_wybor(0, len(eq))
+    if numer_przedmiotu < 0 or numer_przedmiotu > len(eq):
         print('\nWybierz poprawny numer przedmiotu!')
+        return
+    if numer_przedmiotu == 0:
         return
     wybrany_przedmiot = eq[numer_przedmiotu - 1]
     status, przedmiot = ulepszanie(gracz, wybrany_przedmiot)
