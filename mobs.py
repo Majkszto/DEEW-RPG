@@ -241,11 +241,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[2],
-            'Szansa': 2
+            'Szansa': 5
             },
 {
             **items.krysztaly_duszy[2],
-            'Szansa': 2
+            'Szansa': 5
             }
         ]
     },
@@ -360,11 +360,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[3],
-            'Szansa': 1
+            'Szansa': 4
             },
 {
             **items.krysztaly_duszy[3],
-            'Szansa': 1
+            'Szansa': 4
             }
         ]
     },
@@ -482,11 +482,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[4],
-            'Szansa': 2
+            'Szansa': 3
             },
 {
             **items.krysztaly_duszy[4],
-            'Szansa': 2
+            'Szansa': 3
             }
         ]
     },
@@ -621,11 +621,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[5],
-            'Szansa': 2
+            'Szansa': 3
             },
 {
             **items.krysztaly_duszy[5],
-            'Szansa': 2
+            'Szansa': 3
             }
         ]
     },
@@ -753,11 +753,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[6],
-            'Szansa': 1
+            'Szansa': 3
             },
 {
             **items.krysztaly_duszy[6],
-            'Szansa': 1
+            'Szansa': 3
             },
 {
             **items.pierscienie[5],
@@ -894,11 +894,11 @@ moby = [
             },
 {
             **items.zwoje_duszy[7],
-            'Szansa': 1
+            'Szansa': 3
             },
 {
             **items.krysztaly_duszy[7],
-            'Szansa': 1
+            'Szansa': 3
             },
 {
             **items.pierscienie[6],
