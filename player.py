@@ -9,6 +9,8 @@ and leveling up.
 import equipment
 import skills
 import ui
+import database
+import sqlite3
 
 
 def nowa_gra(nick_gracza):
@@ -118,3 +120,47 @@ def sprawdz_poziom(gracz):
         statystyki['Obrona'] += int(gracz['Poziom'] / 2)
         wymagany_exp = int(100 * gracz['Poziom'] ** 4)
         print(f'Pomyślnie awansowano na {gracz['Poziom']} poziom!')
+
+def przyznaj_exp(id_postaci, ilosc_exp):
+
+    if ilosc_exp < 0:
+        return 0
+
+    polaczenie = database.polacz_z_baza()
+
+    try:
+        polaczenie.execute('BEGIN IMMEDIATE')
+
+        gracz_przed = database.pobierz_gracza(id_postaci, polaczenie)
+
+        if gracz_przed is None:
+            polaczenie.rollback()
+            return 0
+
+        gracz_przed['Exp'] += ilosc_exp
+
+        sprawdz_poziom(gracz_przed)
+
+        wynik = database.zapisz_awans(id_postaci, gracz_przed, polaczenie)
+
+        if wynik == 0:
+            polaczenie.rollback()
+            return 0
+        polaczenie.commit()
+        return 1
+
+    except Exception as blad:
+        polaczenie.rollback()
+        print(f'\nBłąd podczas przyznawania EXP: {blad}')
+        raise
+
+    finally:
+        polaczenie.close()
+
+def przyznaj_zloto(id_postaci, ilosc_zlota):
+    if ilosc_zlota < 0:
+        return 0
+    wynik = database.dodaj_zloto(id_postaci, ilosc_zlota)
+    if wynik == 0:
+        return 0
+    return 1
